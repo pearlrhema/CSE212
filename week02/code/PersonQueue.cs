@@ -8,12 +8,12 @@ public class PersonQueue
     public int Length => _queue.Count;
 
     /// <summary>
-    /// Add a person to the queue
+    /// Add a person to the back of the queue and remove the oldest at index 0
     /// </summary>
     /// <param name="person">The person to add</param>
-    public void Enqueue(Person person)
+    public void Enqueue(Person person) 
     {
-        _queue.Insert(0, person);
+        _queue.Add(person); //the person was added to index 0 which is the front of the queue  so we need to add it to the back.
     }
 
     public Person Dequeue()
