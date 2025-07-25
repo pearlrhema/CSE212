@@ -24,9 +24,9 @@
 
         // Find the index of the item with the highest priority to remove
         var highPriorityIndex = 0;
-        for (int index = 1; index < _queue.Count -1; index++) //index < _queue.Count - 1 skips the last item in the queue so ww will have to include it by removing the -1
+        for (int index = 1; index < _queue.Count; index++) //index < _queue.Count - 1 skips the last item in the queue so ww will have to include it by removing the -1
         {
-            if (_queue[index].Priority >= _queue[highPriorityIndex].Priority) // if two items have the same priority but different indexes, the index of the last added item must be greater than the index of the first item so that the last item is kept and the first item is reomved.
+            if (_queue[index].Priority > _queue[highPriorityIndex].Priority) // if two items have the same priority but different indexes, the index of the last added item must be greater than the index of the first item so that the last item is kept and the first item is reomved.
                 highPriorityIndex = index;
         }
 
