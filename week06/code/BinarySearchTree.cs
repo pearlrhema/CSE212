@@ -68,6 +68,19 @@ public class BinarySearchTree : IEnumerable<int>
     /// <summary>
     /// Iterate backward through the BST.
     /// </summary>
+    // Duplicate Reverse method removed to resolve compile error.
+
+    private void TraverseBackward(Node? node, List<int> values)
+    {
+        // TODO Problem 3
+        if (node is not null)
+        {
+            TraverseBackward(node.Right, values);
+            values.Add(node.Data);
+            TraverseBackward(node.Left, values);
+        }
+    }
+
     public IEnumerable Reverse()
     {
         var numbers = new List<int>();
@@ -76,11 +89,6 @@ public class BinarySearchTree : IEnumerable<int>
         {
             yield return number;
         }
-    }
-
-    private void TraverseBackward(Node? node, List<int> values)
-    {
-        // TODO Problem 3
     }
 
     /// <summary>
